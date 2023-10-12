@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 // Initialiser le sémaphore
-int sem_initilise(sem_t *sem, unsigned int value)
+sem_initilise(sem_t *sem, unsigned int value)
 {
     if (sem_init(sem, 0, value) == 0)
     {
@@ -13,7 +13,7 @@ int sem_initilise(sem_t *sem, unsigned int value)
 }
 
 // Opération P
-int sem_p(sem_t *sem)
+sem_p(sem_t *sem)
 {
     if (sem_wait(sem) == 0)
     {
@@ -24,7 +24,7 @@ int sem_p(sem_t *sem)
 }
 
 // Opération V
-int sem_v(sem_t *sem)
+sem_v(sem_t *sem)
 {
     if (sem_post(sem) == 0)
     {
@@ -35,7 +35,7 @@ int sem_v(sem_t *sem)
 }
 
 // Détruire le sémaphore
-int sem_destruire(sem_t *sem)
+sem_destruire(sem_t *sem)
 {
     if (sem_destroy(sem) == 0)
     {
